@@ -44,7 +44,7 @@ class Login extends Component {
           <FormItem label="Password" message="">
             <Password onChange={this.handleChange} />
           </FormItem>
-          <View>
+          <View margin="0 0 4px 0">
             <View.Inline float="left">
               <CheckBox label="Remember me" />
             </View.Inline>

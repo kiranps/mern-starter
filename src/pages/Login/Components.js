@@ -64,23 +64,3 @@ export const Password = styled.input.attrs({
     border: 1px solid #007ceb;
   }
 `
-
-export const Button = styled.button.attrs({
-  children: props => props.label
-})`
-  box-sizing: border-box;
-  height: 44px;
-  width: 314px;
-  border-radius: 3px;
-  background-color: #007ceb;
-  font-size: 14px;
-  color: #ffffff;
-  border: none;
-  margin-top: 10px;
-  cursor: pointer;
-  outline: none;
-`
-
-export const ValidationMessage = styled.div`
-  color: #4f4f4f;
-`
