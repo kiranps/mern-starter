@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import styled from 'styled-components';
 import FormItem from 'components/FormItem';
 import View from 'components/View';
 import Link from 'components/Link';
@@ -11,7 +10,6 @@ import {
   Form,
   UserName,
   Password,
-  ValidationMessage,
 } from './Components';
 
 class Login extends Component {
@@ -27,7 +25,6 @@ class Login extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const {username, password} = this.state;
     this.setState({loading: true});
   };
 

@@ -1,5 +1,3 @@
-import React from "react";
-import { nest } from 'recompose';
 import styled from 'styled-components';
 
 export const Background = styled.div`
