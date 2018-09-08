@@ -1,35 +1,29 @@
-import React, {Component} from 'react';
-import FormItem from 'components/FormItem';
-import View from 'components/View';
-import Link from 'components/Link';
-import CheckBox from 'components/CheckBox';
-import Button from 'components/Button';
-import {
-  Background,
-  Heading,
-  Form,
-  UserName,
-  Password,
-} from './Components';
+import React, { Component } from "react";
+import FormItem from "components/FormItem";
+import View from "components/View";
+import Link from "components/Link";
+import CheckBox from "components/CheckBox";
+import Button from "components/Button";
+import { Background, Heading, Form, UserName, Password } from "./Styled";
 
 class Login extends Component {
   constructor(props) {
     super(props);
-    this.state = {loading: false, username: '', password: ''};
+    this.state = { loading: false, username: "", password: "" };
   }
 
   handleChange = e => {
-    const {name, value} = e.target;
-    this.setState({[name]: value});
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
   };
 
   handleSubmit = e => {
     e.preventDefault();
-    this.setState({loading: true});
+    this.setState({ loading: true });
   };
 
   render() {
-    const {loading} = this.state;
+    const { loading } = this.state;
 
     return (
       <Background>

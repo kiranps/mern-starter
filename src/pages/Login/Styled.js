@@ -1,18 +1,18 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Background = styled.div`
   position: fixed;
   height: 100%;
   width: 100%;
   background-color: #f8f8f8;
-`
+`;
 
 export const Heading = styled.div`
   text-align: center;
   font-size: 22px;
   margin-bottom: 12px;
   color: #252525;
-`
+`;
 
 export const Form = styled.form`
   position: fixed;
@@ -20,13 +20,13 @@ export const Form = styled.form`
   box-sizing: border-box;
   display: inline-block;
   top: 17%;
-  right: 50%; 
+  right: 50%;
   margin-right: -220px;
   width: 440px;
   height: 425px;
   background-color: #ffffff;
   border: 1px solid #d8d8d8;
-`
+`;
 
 export const UserName = styled.input.attrs({
   name: "username",
@@ -38,18 +38,20 @@ export const UserName = styled.input.attrs({
   border: 1px solid #c9c8c8;
   border-radius: 3px;
   padding: 0 5px;
+  outline: none;
 
   &:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px white inset;
   }
 
   &:focus {
-    border: 1px solid #007ceb;
+    border: 2px solid #007ceb;
   }
-`
+`;
 
 export const Password = styled.input.attrs({
-  name: "password", type: "password"
+  name: "password",
+  type: "password"
 })`
   box-sizing: border-box;
   height: 38px;
@@ -57,8 +59,9 @@ export const Password = styled.input.attrs({
   border: 1px solid #c9c8c8;
   border-radius: 3px;
   padding: 0 5px;
+  outline: none;
 
   &:focus {
-    border: 1px solid #007ceb;
+    border: 2px solid #007ceb;
   }
-`
+`;
