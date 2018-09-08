@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components";
 
 const rotate360 = keyframes`
   0% {
@@ -24,14 +24,14 @@ const Spinner = styled.div`
   transform: translateZ(0);
   animation: ${rotate360} 1.1s infinite linear;
   border-radius: 50%;
-  width: 13px;
-  height: 13px;
+  width: 18px;
+  height: 18px;
 
   &:after {
     border-radius: 50%;
     width: 13px;
     height: 13px;
   }
-`
+`;
 
 export default Spinner;
