@@ -10,6 +10,7 @@ class Login extends Component {
   constructor(props) {
     super(props);
     this.state = { loading: false, username: "", password: "" };
+    console.log("Login Constructor");
   }
 
   handleChange = e => {
@@ -20,9 +21,11 @@ class Login extends Component {
   handleSubmit = e => {
     e.preventDefault();
     this.setState({ loading: true });
+    this.props.authenticate();
   };
 
   render() {
+    console.log("Login render");
     const { loading } = this.state;
 
     return (

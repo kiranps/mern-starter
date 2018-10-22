@@ -1,8 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import ApiProvider from "contexts/ApiContext";
+import registerServiceWorker from "./registerServiceWorker";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <ApiProvider>
+    <App />
+  </ApiProvider>,
+  document.getElementById("root")
+);
 registerServiceWorker();
