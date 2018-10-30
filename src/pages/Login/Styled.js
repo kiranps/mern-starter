@@ -30,6 +30,7 @@ export const Form = styled.form`
 
 export const UserName = styled.input.attrs({
   name: "username",
+  autoComplete: "username",
   spellCheck: "false"
 })`
   box-sizing: border-box;
@@ -51,6 +52,7 @@ export const UserName = styled.input.attrs({
 
 export const Password = styled.input.attrs({
   name: "password",
+  autoComplete: "current-password",
   type: "password"
 })`
   box-sizing: border-box;

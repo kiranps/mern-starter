@@ -14,7 +14,7 @@ class App extends Component {
           <Route exact path="/login" component={Login} />
           <PrivateRoute path="/page1" component={Page1} />
           <Route exact path="/page2" component={Page2} />
-          <Route exact path="/page3" component={Page3} />
+          <PrivateRoute exact path="/page3" component={Page3} />
         </Fragment>
       </Router>
     );

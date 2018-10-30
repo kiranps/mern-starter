@@ -26,9 +26,10 @@ class Login extends Component {
 
   render() {
     const { loading } = this.state;
-    const { authenticated } = this.props;
+    const { authenticated, location } = this.props;
+    const { from } = location.state || { from: { pathname: "/page1" } };
 
-    if (authenticated) return <Redirect to="/page1" />;
+    if (authenticated) return <Redirect to={from} />;
 
     return (
       <Background>
