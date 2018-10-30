@@ -6,33 +6,34 @@ export const AppContext = React.createContext();
 export default class Provider extends Component {
   constructor(props) {
     super(props);
-
     this.services = this.proxyMethodCalls(services, this);
     this.state = {};
   }
 
   proxyMethodCalls = obj => {
     const that = this;
+
     const handler = {
       get(target, propKey) {
-        if (typeof target[propKey] === "function") {
-          const origMethod = target[propKey];
-          return function(...args) {
-            const result = origMethod.apply(this, args);
+        const propValue = target[propKey];
+        if (typeof propValue === "object") {
+          return new Proxy(propValue, handler);
+        } else if (typeof propValue === "function") {
+          return function() {
+            const result = propValue.apply(this, arguments);
             result.then(x => {
               that.setState(x);
             });
             return result;
           };
-        } else if (typeof target[propKey] === "object") {
-          return new Proxy(target[propKey], handler);
+        } else {
+          return propValue;
         }
       }
     };
+
     return new Proxy(obj, handler);
   };
-
-  state = {};
 
   render() {
     return (
