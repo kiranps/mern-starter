@@ -1,8 +1,3 @@
-export const authenticate = () =>
-  fetch("/data.json")
-    .then(data => {
-      return data.json();
-    })
-    .then(data => {
-      return data;
-    });
+import http from "lib/http";
+
+export const login = () => http.get("/data.json");

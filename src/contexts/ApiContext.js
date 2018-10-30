@@ -6,9 +6,7 @@ export const ApiContext = React.createContext();
 export default class ApiProvider extends Component {
   state = {};
 
-  get http() {
-    return services;
-  }
+  middleware = () => {};
 
   render() {
     return (

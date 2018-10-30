@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import FormItem from "components/FormItem";
 import View from "components/View";
 import Link from "components/Link";
@@ -10,7 +11,6 @@ class Login extends Component {
   constructor(props) {
     super(props);
     this.state = { loading: false, username: "", password: "" };
-    console.log("Login Constructor");
   }
 
   handleChange = e => {
@@ -21,12 +21,14 @@ class Login extends Component {
   handleSubmit = e => {
     e.preventDefault();
     this.setState({ loading: true });
-    this.props.authenticate();
+    this.props.login();
   };
 
   render() {
-    console.log("Login render");
     const { loading } = this.state;
+    const { authenticated } = this.props;
+
+    if (authenticated) return <Redirect to="/page1" />;
 
     return (
       <Background>

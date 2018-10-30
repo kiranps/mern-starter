@@ -1,11 +1,11 @@
 import React from "react";
-import { ApiContext } from "contexts/ApiContext";
+import { AppContext } from "contexts/Provider";
 import Login from "./Login";
 
 export default props => (
-  <ApiContext.Consumer>
-    {({ authentication: { authenticate } }) => (
-      <Login {...props} authenticate={authenticate} />
+  <AppContext.Consumer>
+    {({ authentication: { login }, authenticated }) => (
+      <Login {...props} login={login} authenticated={authenticated} />
     )}
-  </ApiContext.Consumer>
+  </AppContext.Consumer>
 );

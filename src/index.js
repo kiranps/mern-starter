@@ -2,13 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import ApiProvider from "contexts/ApiContext";
+import Provider from "contexts/Provider";
 import registerServiceWorker from "./registerServiceWorker";
 
 ReactDOM.render(
-  <ApiProvider>
+  <Provider>
     <App />
-  </ApiProvider>,
+  </Provider>,
   document.getElementById("root")
 );
 registerServiceWorker();
