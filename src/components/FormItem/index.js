@@ -1,5 +1,5 @@
 import React from "react";
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 const Label = styled.div`
   color: #4f4f4f;
