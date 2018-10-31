@@ -14,7 +14,7 @@ class App extends Component {
       <Router>
         <Fragment>
           <LazyRoute exact path="/" component={Login} />
-          <LazyRoute path="/h" component={Home} />
+          <LazyRoute auth path="/h" component={Home} />
           <LazyRoute exact path="/login" component={Login} />
           <LazyRoute auth path="/page1" component={Page1} />
           <LazyRoute exact path="/page2" component={Page2} />
