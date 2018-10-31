@@ -7,7 +7,9 @@ export default class Provider extends Component {
   constructor(props) {
     super(props);
     this.services = this.proxyMethodCalls(services, this);
-    this.state = {};
+    this.state = {
+      authenticated: localStorage.getItem("authenticated") || false
+    };
   }
 
   proxyMethodCalls = obj => {

@@ -21,7 +21,9 @@ class Login extends Component {
   handleSubmit = e => {
     e.preventDefault();
     this.setState({ loading: true });
-    this.props.login();
+    this.props.login().then(x => {
+      localStorage.setItem("authenticated", x.authenticated);
+    });
   };
 
   render() {
