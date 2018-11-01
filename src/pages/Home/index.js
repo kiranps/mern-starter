@@ -1,8 +1,19 @@
 import React, { Fragment, lazy } from "react";
 import { AppBar, NavItem, Link } from "./Styled";
 import LazyRoute from "components/LazyRoute";
-const Page1 = lazy(() => import("pages/Page1"));
-const Page2 = lazy(() => import("pages/Page2"));
+import DropDown from "components/DropDown";
+import Menu from "components/Menu";
+
+const Page1 = lazy(() => import("./pages/Page1"));
+const Page2 = lazy(() => import("./pages/Page2"));
+
+const DropDownMenu = () => (
+  <Menu style={{ marginTop: "2px" }}>
+    {["one", "two", "three", "four", "five"].map((x, i) => (
+      <Menu.Item key={i}>{x}</Menu.Item>
+    ))}
+  </Menu>
+);
 
 export default function Home() {
   return (
@@ -18,7 +29,9 @@ export default function Home() {
           <Link to="/page3">
             <NavItem>Page3</NavItem>
           </Link>
-          <NavItem>Kiran</NavItem>
+          <DropDown menu={DropDownMenu}>
+            <NavItem>Kiran</NavItem>
+          </DropDown>
         </AppBar.Right>
       </AppBar>
       <LazyRoute exact path="/h/page1" component={Page1} />
