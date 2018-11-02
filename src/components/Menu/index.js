@@ -1,3 +1,3 @@
-import Menu from "./Styled";
+import Menu from "./Menu";
 
 export default Menu;

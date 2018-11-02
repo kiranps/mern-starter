@@ -1,8 +1,20 @@
-import React, { Component } from "react";
-import { Menu } from "./Styled";
+import React from "react";
+import { Menu, Item } from "./Styled";
 
-const Menu = props => {
-  return <div />;
+const MenuBox = ({ onClick, children }) => (
+  <Menu>
+    {React.Children.map(children, (child, i) =>
+      React.cloneElement(child, {
+        onClick: () => onClick(child.props.value)
+      })
+    )}
+  </Menu>
+);
+
+MenuBox.defaultProps = {
+  onClick: () => {}
 };
 
-export default Menu;
+MenuBox.Item = Item;
+
+export default MenuBox;

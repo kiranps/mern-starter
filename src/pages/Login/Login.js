@@ -29,7 +29,7 @@ class Login extends Component {
   render() {
     const { loading } = this.state;
     const { authenticated, location } = this.props;
-    const { from } = location.state || { from: { pathname: "/page1" } };
+    const { from } = location.state || { from: { pathname: "/h/page1" } };
 
     if (authenticated) return <Redirect to={from} />;
 

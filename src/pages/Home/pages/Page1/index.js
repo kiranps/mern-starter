@@ -8,33 +8,33 @@ export default function Page1() {
       <div>page1</div>
       <div>
         <Menu>
-          <Menu.Item>
+          <Menu.Item value="one">
             <span>
               <Icon name="bubble2" />
             </span>
             <span>menu 1</span>
           </Menu.Item>
-          <Menu.Item>
+          <Menu.Item value="two">
             <span>
-              <Icon name="bubble2" />
+              <Icon name="users" />
             </span>
             <span>menu 2</span>
           </Menu.Item>
-          <Menu.Item>
+          <Menu.Item value="three">
             <span>
-              <Icon name="bubble2" />
+              <Icon name="exit" />
             </span>
             <span>menu 3</span>
           </Menu.Item>
-          <Menu.Item>
+          <Menu.Item value="four">
             <span>
-              <Icon name="bubble2" />
+              <Icon name="users" />
             </span>
             <span>menu 4</span>
           </Menu.Item>
-          <Menu.Item>
+          <Menu.Item value="five">
             <span>
-              <Icon name="bubble2" />
+              <Icon name="users" />
             </span>
             <span>menu 5</span>
           </Menu.Item>

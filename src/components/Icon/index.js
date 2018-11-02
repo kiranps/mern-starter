@@ -1,10 +1,10 @@
 import React from "react";
+import "./icons.svg";
 import "./style.css";
-import "./symbol-defs.svg";
 
 const Icon = props => (
   <svg className={`icon icon-${props.name}`}>
-    <use xlinkHref={`#icons_${props.name}`} />
+    <use xlinkHref={`#icons_icon-${props.name}`} />
   </svg>
 );
 

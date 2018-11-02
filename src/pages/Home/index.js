@@ -3,15 +3,33 @@ import { AppBar, NavItem, Link } from "./Styled";
 import LazyRoute from "components/LazyRoute";
 import DropDown from "components/DropDown";
 import Menu from "components/Menu";
+import Icon from "components/Icon";
 
 const Page1 = lazy(() => import("./pages/Page1"));
 const Page2 = lazy(() => import("./pages/Page2"));
 
 const DropDownMenu = () => (
   <Menu style={{ marginTop: "2px" }}>
-    {["one", "two", "three", "four", "five"].map((x, i) => (
-      <Menu.Item key={i}>{x}</Menu.Item>
-    ))}
+    <Menu.Item value="support">
+      <span>
+        <Icon name="bubble2" />
+      </span>
+      <span>support</span>
+    </Menu.Item>
+    <Menu.Item value="users">
+      <span>
+        <Icon name="users" />
+      </span>
+      <span>users</span>
+    </Menu.Item>
+    <Menu.Item value="logout">
+      <Link to="/logout">
+        <span>
+          <Icon name="exit" />
+        </span>
+        <span>logout</span>
+      </Link>
+    </Menu.Item>
   </Menu>
 );
 

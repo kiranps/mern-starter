@@ -29,6 +29,4 @@ const Item = styled.div`
   }
 `;
 
-Menu.Item = Item;
-
-export default Menu;
+export { Menu, Item };

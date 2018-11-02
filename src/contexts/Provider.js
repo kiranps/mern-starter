@@ -8,7 +8,7 @@ export default class Provider extends Component {
     super(props);
     this.services = this.proxyMethodCalls(services, this);
     this.state = {
-      authenticated: localStorage.getItem("authenticated") || false
+      authenticated: localStorage.getItem("authenticated") === "true"
     };
   }
 
