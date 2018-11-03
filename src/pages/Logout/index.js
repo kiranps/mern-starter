@@ -4,8 +4,11 @@ import Logout from "./Logout";
 
 export default props => (
   <AppContext.Consumer>
-    {({ authentication: { logout }, authenticated }) => (
-      <Logout {...props} authenticated={authenticated} logout={logout} />
-    )}
+    {({
+      services: {
+        authentication: { logout }
+      },
+      state: { authenticated }
+    }) => <Logout {...props} authenticated={authenticated} logout={logout} />}
   </AppContext.Consumer>
 );

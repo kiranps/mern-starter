@@ -1,15 +1,36 @@
+const requestHeaders = () => ({
+  Authorization: "Bearer " + localStorage.getItem("token") || ""
+});
+
+const authService = response => {
+  if (response.status === 401) {
+    localStorage.setItem("authenticated", false);
+    localStorage.removeItem("token");
+    throw { authenticated: false };
+  } else {
+    return response;
+  }
+};
+
 class HTTP {
   static get(url) {
     return fetch(url, {
-      method: "GET"
-    }).then(response => {
-      return response.json();
-    });
+      method: "GET",
+      headers: { ...requestHeaders() }
+    })
+      .then(authService)
+      .then(response => {
+        return response.json();
+      });
   }
 
   static put(url, data) {
     return fetch(url, {
       method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        ...requestHeaders()
+      },
       body: JSON.stringify(data)
     }).then(response => response.json());
   }
@@ -17,6 +38,7 @@ class HTTP {
   static del(url, data = {}) {
     return fetch(url, {
       method: "DELETE",
+      headers: { ...requestHeaders() },
       body: JSON.stringify(data)
     }).then(response => response.json());
   }
@@ -24,6 +46,10 @@ class HTTP {
   static post(url, data) {
     return fetch(url, {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        ...requestHeaders()
+      },
       body: JSON.stringify(data)
     }).then(response => response.json());
   }
@@ -35,6 +61,7 @@ class HTTP {
     }
     return fetch(url, {
       method: "POST",
+      headers: { ...requestHeaders() },
       body: formData
     }).then(response => response.json());
   }

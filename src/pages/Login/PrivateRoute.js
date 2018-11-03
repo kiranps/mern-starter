@@ -5,7 +5,7 @@ import { AppContext } from "contexts/Provider";
 function PrivateRoute({ component: Component, ...rest }) {
   return (
     <AppContext.Consumer>
-      {({ authenticated }) => (
+      {({ state: { authenticated } }) => (
         <Route
           {...rest}
           render={props =>

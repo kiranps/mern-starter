@@ -4,8 +4,11 @@ import Login from "./Login";
 
 export default props => (
   <AppContext.Consumer>
-    {({ authentication: { login }, authenticated }) => (
-      <Login {...props} login={login} authenticated={authenticated} />
-    )}
+    {({
+      services: {
+        authentication: { login }
+      },
+      state: { authenticated }
+    }) => <Login {...props} login={login} authenticated={authenticated} />}
   </AppContext.Consumer>
 );

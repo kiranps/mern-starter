@@ -23,9 +23,13 @@ export default class Provider extends Component {
         } else if (typeof propValue === "function") {
           return function() {
             const result = propValue.apply(this, arguments);
-            result.then(x => {
-              that.setState(x);
-            });
+            result
+              .then(x => {
+                that.setState({ ...x });
+              })
+              .catch(err => {
+                that.setState({ ...err });
+              });
             return result;
           };
         } else {
@@ -39,7 +43,9 @@ export default class Provider extends Component {
 
   render() {
     return (
-      <AppContext.Provider value={{ ...this.services, ...this.state }}>
+      <AppContext.Provider
+        value={{ services: this.services, state: this.state }}
+      >
         {this.props.children}
       </AppContext.Provider>
     );

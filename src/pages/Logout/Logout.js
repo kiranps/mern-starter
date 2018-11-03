@@ -11,7 +11,7 @@ export default class Logout extends Component {
     const { authenticated } = this.props;
     console.log(authenticated);
     return authenticated ? (
-      <LogoutMessage>Logging out</LogoutMessage>
+      <LogoutMessage>Logging out in a few seconds</LogoutMessage>
     ) : (
       <Redirect to="/" />
     );

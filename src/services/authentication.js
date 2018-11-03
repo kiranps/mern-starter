@@ -1,6 +1,21 @@
 import http from "utils/http";
 
-export const login = () => http.get("/data.json");
+export const login = data =>
+  http.post("http://localhost:8080/login", data).then(response => {
+    if (response.authenticated) {
+      const { token } = response;
+      localStorage.setItem("authenticated", true);
+      localStorage.setItem("token", token);
+      return {
+        authenticated: true,
+        token
+      };
+    } else {
+      return {
+        authenticated: false
+      };
+    }
+  });
 
 export const logout = () =>
   http.get("/data.json").then(x => {
