@@ -6,7 +6,7 @@ const authService = response => {
   if (response.status === 401) {
     localStorage.setItem("authenticated", false);
     localStorage.removeItem("token");
-    throw { authenticated: false };
+    throw new Error({ authenticated: false });
   } else {
     return response;
   }

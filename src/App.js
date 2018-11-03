@@ -1,4 +1,4 @@
-import React, { Component, Fragment, lazy } from "react";
+import React, { Component, lazy } from "react";
 import { HashRouter as Router, Switch } from "react-router-dom";
 import LazyRoute from "components/LazyRoute";
 
