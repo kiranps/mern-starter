@@ -9,7 +9,6 @@ export default class Logout extends Component {
 
   render() {
     const { authenticated } = this.props;
-    console.log(authenticated);
     return authenticated ? (
       <LogoutMessage>Logging out in a few seconds</LogoutMessage>
     ) : (

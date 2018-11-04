@@ -1,3 +1,7 @@
+import Modal from "components/Modal";
+
+const confirm = Modal;
+
 const requestHeaders = () => ({
   Authorization: "Bearer " + localStorage.getItem("token") || ""
 });
@@ -6,7 +10,8 @@ const authService = response => {
   if (response.status === 401) {
     localStorage.setItem("authenticated", false);
     localStorage.removeItem("token");
-    throw new Error({ authenticated: false });
+    confirm({ title: "Session Expired Login Again" });
+    throw { authenticated: false };
   } else {
     return response;
   }

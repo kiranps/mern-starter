@@ -25,10 +25,10 @@ export default class Provider extends Component {
             const result = propValue.apply(this, arguments);
             result
               .then(x => {
-                that.setState({ ...x });
+                that.setState(x);
               })
               .catch(err => {
-                that.setState({ ...err });
+                that.setState(err);
               });
             return result;
           };
