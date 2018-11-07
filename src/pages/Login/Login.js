@@ -22,10 +22,9 @@ class Login extends Component {
   }
 
   componentDidMount = () => {
-    window.addEventListener("message", function(e) {
-      console.log(e.data.message);
-      e.source.close();
-    });
+    window.authenticateCallback = function(token) {
+      console.log(token);
+    };
   };
 
   handleChange = e => {

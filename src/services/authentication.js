@@ -1,7 +1,7 @@
 import http from "utils/http";
 
 export const login = data =>
-  http.post("http://localhost:8080/login", data).then(response => {
+  http.post("/api/login", data).then(response => {
     if (response.authenticated) {
       const { token } = response;
       localStorage.setItem("authenticated", true);
