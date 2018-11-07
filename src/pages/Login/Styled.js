@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components/macro";
 
 export const Background = styled.div`
@@ -14,7 +15,7 @@ export const Heading = styled.div`
   color: #252525;
 `;
 
-export const Form = styled.form`
+export const LoginBox = styled.div`
   position: fixed;
   padding: 72px 62px 40px 62px;
   box-sizing: border-box;
@@ -23,10 +24,12 @@ export const Form = styled.form`
   right: 50%;
   margin-right: -220px;
   width: 440px;
-  height: 425px;
+  height: 468px;
   background-color: #ffffff;
   border: 1px solid #d8d8d8;
 `;
+
+export const Form = styled.form``;
 
 export const UserName = styled.input.attrs({
   name: "username",
@@ -67,3 +70,28 @@ export const Password = styled.input.attrs({
     border: 2px solid #007ceb;
   }
 `;
+
+export const Button = styled.button`
+  box-sizing: border-box;
+  height: 44px;
+  width: 314px;
+  border-radius: 3px;
+  background-color: #d8583b;
+  font-size: 14px;
+  color: #ffffff;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+  outline: none;
+  float: left;
+
+  > * {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 25px;
+  }
+`;
+
+export const GoogleSignIn = ({ children, onClick }) => (
+  <Button onClick={onClick}>{children}</Button>
+);

@@ -18,3 +18,8 @@ Single-colored icons can be modified like so:
 .icon-users {
   width: 1.125em;
 }
+
+.icon-google-plus {
+  width: 24px;
+  height: 24px;
+}

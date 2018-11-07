@@ -1,15 +1,15 @@
-import styled from 'styled-components/macro';
+import styled from "styled-components/macro";
 
 const View = styled.div`
   float: left;
   width: 100%;
-  margin: ${props => props.margin}
-`
+  text-align: ${props => props.align};
+  margin: ${props => props.margin};
+`;
 
 View.defaultProps = {
- margin: "0"
-}
-
+  margin: "0"
+};
 
 const Inline = styled.div`
   display: inline-block;
@@ -18,12 +18,16 @@ const Inline = styled.div`
   > {
     vertical-align: top;
   }
-`
+`;
+
+View.defaultProps = {
+  align: "left"
+};
 
 Inline.defaultProps = {
   float: "left"
-}
+};
 
-View.Inline = Inline
+View.Inline = Inline;
 
 export default View;
