@@ -1,8 +1,8 @@
 import React from "react";
 import { Menu, Item } from "./Styled";
 
-const MenuBox = ({ onClick, children }) => (
-  <Menu>
+const MenuBox = ({ onClick, children, ...props }) => (
+  <Menu {...props}>
     {React.Children.map(children, (child, i) =>
       React.cloneElement(child, {
         onClick: () => onClick(child.props.value)

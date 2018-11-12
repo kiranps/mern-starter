@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
 import { NavLink } from "react-router-dom";
 
-const AppBar = styled.nav`
+const AppBar = styled.div`
   height: 60px;
   user-select: none;
   background-color: #ffffff;
@@ -15,7 +15,7 @@ const AppBar = styled.nav`
   align-items: center;
 `;
 
-const NavItem = styled.li`
+const NavItem = styled.div`
   margin: 0;
   text-align: center;
   height: 100%;
@@ -29,7 +29,7 @@ const NavItem = styled.li`
 
 const Left = styled.div``;
 
-const Right = styled.ul`
+const Right = styled.div`
   display: flex;
   flex-direction: row;
   list-style-type: none;

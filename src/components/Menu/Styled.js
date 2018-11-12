@@ -4,7 +4,7 @@ const Menu = styled.div`
   position: absolute;
   box-sizing: border-box;
   width: inherit;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
   background-color: #ffffff;
   border-radius: 0 0 1px 1px;
   border-top: 1px solid #e6e6e6;

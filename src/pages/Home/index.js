@@ -9,7 +9,7 @@ const Page1 = lazy(() => import("./pages/Page1"));
 const Page2 = lazy(() => import("./pages/Page2"));
 
 const DropDownMenu = () => (
-  <Menu style={{ marginTop: "2px" }}>
+  <Menu>
     <Menu.Item value="support">
       <span>
         <Icon name="bubble2" />
