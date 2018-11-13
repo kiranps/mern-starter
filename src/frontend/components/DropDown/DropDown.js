@@ -30,7 +30,6 @@ class Dropdown extends Component {
 
   toggleOpen = e => {
     this.top = e.target.getBoundingClientRect().height;
-    console.log(this.top);
     this.setState({ isOpen: !this.state.isOpen });
     document.addEventListener("click", this.hide, false);
   };
@@ -43,9 +42,6 @@ class Dropdown extends Component {
   render() {
     const { children, menu } = this.props;
     const { isOpen, style } = this.state;
-    console.log("render");
-    console.log(this.showDropList);
-    console.log(style);
 
     return (
       <Fragment>

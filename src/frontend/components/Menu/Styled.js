@@ -21,7 +21,7 @@ const Item = styled.div`
   text-overflow: ellipsis;
   line-height: 28px;
   font-family: sans-serif;
-  padding: 0 5px 0 10px;
+  padding: 0 10px 0 10px;
   color: #3b444e;
 
   &:hover {
