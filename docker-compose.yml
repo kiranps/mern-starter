@@ -1,7 +1,10 @@
-version: "3"
+version: "3.4"
 services:
   frontend:
-    build: .
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      target: development
     volumes:
       - ".:/usr/src/app"
       - "/usr/src/app/node_modules"
@@ -12,7 +15,10 @@ services:
       - NODE_ENV=development
 
   backend:
-    build: .
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      target: development
     volumes:
       - ".:/usr/src/app"
       - "/usr/src/app/node_modules"

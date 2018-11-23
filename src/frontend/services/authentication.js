@@ -17,10 +17,9 @@ export const login = data =>
     }
   });
 
-export const logout = () =>
-  http.get("/data.json").then(x => {
-    localStorage.setItem("authenticated", false);
-    return new Promise(function(resolve) {
-      setTimeout(resolve.bind(null, { authenticated: false }), 3000);
-    });
+export const logout = () => {
+  localStorage.setItem("authenticated", false);
+  return new Promise(function(resolve) {
+    setTimeout(resolve.bind(null, { authenticated: false }), 3000);
   });
+};

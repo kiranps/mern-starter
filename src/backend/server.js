@@ -1,7 +1,7 @@
 const express = require("express");
+const path = require("path");
 const bodyParser = require("body-parser");
 const jwt = require("jsonwebtoken");
-const cors = require("cors");
 const passport = require("passport");
 const app = express();
 require("dotenv").load();
@@ -9,15 +9,17 @@ require("dotenv").load();
 const jwtStrategry = require("./strategies/jwt");
 const googleStrategry = require("./strategies/google");
 
-app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(passport.initialize());
+
 passport.use(jwtStrategry);
 passport.use(googleStrategry);
 
-app.get("/", function(req, res) {
-  return res.send("Hello world");
+app.use("/", express.static(path.resolve(__dirname, "public")));
+
+app.get("/test", function(req, res) {
+  return res.send("hello");
 });
 
 app.post("/api/login", (req, res) => {

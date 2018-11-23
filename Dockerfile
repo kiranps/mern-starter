@@ -1,13 +1,20 @@
-# base image
-FROM node:9.10.1
-
-# set working directory
-RUN mkdir /usr/src/app
+FROM node:9.10.1-alpine as base
+RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
-
-# add `/usr/src/app/node_modules/.bin` to $PATH
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
 
-# install and cache app dependencies
-COPY package.json /usr/src/app/package.json
+FROM base as development
+ENV NODE_ENV development
+COPY . /usr/src/app/
 RUN yarn
+
+FROM development as build
+ENV NODE_ENV=production
+RUN yarn build
+
+FROM base as production
+ENV NODE_ENV=production
+COPY package.json yarn.lock ./
+RUN npm install --production
+COPY ./src/backend ./
+COPY --from=build /usr/src/app/build ./public
